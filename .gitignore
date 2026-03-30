@@ -1,0 +1,15 @@
+# 忽略虚拟环境
+final_clean_env/
+venv/
+.venv/
+
+# 忽略私密配置文件 (API Key 绝对不能上传！)
+.env
+
+# 忽略缓存和编译文件
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# 忽略本地数据库
+vector_db/

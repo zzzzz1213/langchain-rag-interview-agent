@@ -1,0 +1,82 @@
+[
+  {
+    "question": "什么是 Agent 的规划 (Planning) 能力？",
+    "answer": "Planning 是 Agent 的核心大脑，负责将复杂任务拆解为可执行的子任务。常见技术包括 Chain-of-Thought (CoT) 和 Tree-of-Thoughts (ToT)。",
+    "category": "架构"
+  },
+  {
+    "question": "如何解决大模型的长幻觉问题？",
+    "answer": "通过 RAG（检索增强生成）技术，在 Prompt 中注入经过验证的外部知识，强制模型依据参考资料回答。",
+    "category": "优化"
+  },
+  {
+    "question": "Agent 的核心工作流程是什么？",
+    "answer": "Perception（感知）-> Planning（规划）-> Action（执行）-> Observation（观察）-> 反馈循环。通过不断的感知-规划-执行循环，Agent实现目标导向的自主决策。",
+    "category": "架构"
+  },
+  {
+    "question": "什么是 Agent 的记忆系统 (Memory)？",
+    "answer": "包括短期记忆（最近对話历史）和长期记忆（知识库、经验总结）。有效的记忆管理能提高Agent的一致性和上下文理解能力。",
+    "category": "架构"
+  },
+  {
+    "question": "Agent 如何与外部工具交互（Tool Calling）？",
+    "answer": "Agent 通过 Function Calling 调用外部 API、数据库等工具。LangChain中通过定义 Tool Spec、Tool Router 让模型自主选择合适的工具。",
+    "category": "实现"
+  },
+  {
+    "question": "LangChain 中 Agent 和 Chain 的区别是什么？",
+    "answer": "Chain 是固定的执行流程，步骤顺序预定义。Agent 是动态决策系统，根据当前状态和目标在多个行动间选择，具有更高的自主性和灵活性。",
+    "category": "框架"
+  },
+  {
+    "question": "什么是 ReAct (Reasoning + Acting) 框架？",
+    "answer": "结合推理（Reasoning）和行动（Acting），Agent 先进行思考，再基于思考结果执行行动，然后观察结果并进一步推理，形成循环改进。",
+    "category": "算法"
+  },
+  {
+    "question": "如何在 LangChain 中创建自定义 Tool？",
+    "answer": "使用 @tool 装饰器定义函数，提供清晰的 docstring 说明（作为 Tool Description），使模型理解何时调用。也可继承 BaseTool 类进行更复杂的定制。",
+    "category": "实现"
+  },
+  {
+    "question": "Agent 常见的失败情况有哪些？",
+    "answer": "无限循环（陷入相同操作）、幻觉调用（调用不存在的工具）、上下文丢失、决策错误。可通过 max_iterations 限制、清晰的 Prompt 工程、Tool 校验来改进。",
+    "category": "问题处理"
+  },
+  {
+    "question": "什么是 Agent 的 Prompt Engineering？",
+    "answer": "通过精心设计系统提示词，包括目标定义、可用工具说明、行为约束等，引导模型作出更好的决策。包括 Few-shot Examples、Chain-of-Thought 等技巧。",
+    "category": "优化"
+  },
+  {
+    "question": "如何评估 Agent 的性能？",
+    "answer": "关键指标包括：成功率（是否达成目标）、效率（步骤数）、成本（API调用次数）、准确性（结果正确性）。可通过单元测试、端到端测试和用户反馈进行评估。",
+    "category": "评估"
+  },
+  {
+    "question": "Agent 和 Multi-Agent 系统的区别？",
+    "answer": "单 Agent 只有一个决策者。Multi-Agent 由多个独立 Agent 协作，通过消息传递、竞争或协商完成复杂任务，适合需要分布式处理的场景。",
+    "category": "架构"
+  },
+  {
+    "question": "LangChain 中的 AgentExecutor 是什么？",
+    "answer": "AgentExecutor 是 Agent 的执行引擎，负责管理 Agent 的循环执行、Tool 调用、错误处理和迭代控制。是 LangChain Agent 系统的核心组件。",
+    "category": "框架"
+  },
+  {
+    "question": "如何防止 Agent 的 Token 溢出？",
+    "answer": "通过 token 计数、滑动窗口管理历史、摘要总结等方式。LangChain 提供 token_counter 工具进行监控，定期清理或压缩历史记录。",
+    "category": "优化"
+  },
+  {
+    "question": "Agent 应用中常见的安全问题有哪些？",
+    "answer": "包括 Prompt 注入攻击、Tool 滥用、敏感信息泄露、行为不可控。需要通过输入验证、权限控制、审计日志等措施确保安全性。",
+    "category": "问题处理"
+  },
+  {
+    "question": "解释 Observation-Action 循环中的反馈机制",
+    "answer": "Agent 执行 Action 后，获得 Observation（观察）。通过将 Observation 反馈给模型，让模型理解结果并调整下一步策略，形成闭环控制。",
+    "category": "架构"
+  }
+]
